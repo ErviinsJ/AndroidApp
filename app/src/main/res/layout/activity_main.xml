@@ -5,14 +5,206 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="info.androidhive.appscandiweb.MainActivity">
+    tools:context="info.androidhive.appscandiweb.MainActivity"
+    android:background="#161823">
+
+
+
+    <ImageView
+        android:id="@+id/home_picture"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:src="@drawable/stdn_pic"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true"/>
+
+    <ImageView
+        android:layout_alignParentBottom="true"
+        android:id="@+id/home_diognal_line"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:src="@drawable/diognal_line"
+        android:layout_alignParentTop="true"/>
+
+    <ImageView
+        android:layout_marginTop="26dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/overlay"
+        android:layout_alignParentTop="true"/>
 
     <TextView
+        android:id="@+id/home_main_text"
+        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="who are you and \nwhy you're \nstanding here?"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        android:fontFamily=""/>
+
+    <TextView
+        android:id="@+id/home_secend_text"
+        android:layout_below="@id/home_main_text"
+        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="It doesn't matter if you're building the next
+Facebook, or if you're the director of \nmarketing for an industrial company."
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        android:fontFamily=""/>
+
+    <ImageView
+        android:layout_marginTop="330dp"
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line"/>
+
+    <TextView
+        android:layout_below="@id/home_main_text"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="96dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"/>
+    <TextView
+        android:id="@+id/home_author"
+        android:layout_below="@id/home_main_text"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="96dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nicholas O'Brian"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/home_date"
+        android:layout_below="@id/home_main_text"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="96dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="28 July"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_below="@+id/home_author"
+        android:id="@+id/userpic1"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/userpica"/>
+    <ImageView
+        android:layout_below="@+id/home_author"
+        android:id="@+id/userpic2"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="38dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/userpicb"/>
+    <ImageView
+        android:layout_below="@+id/home_author"
+        android:id="@+id/likes_background"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/likes_bckgrnd"/>
+    <TextView
+        android:id="@+id/likes_count"
+        android:layout_below="@id/home_author"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+75"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"/>
+    <TextView
+        android:layout_below="@id/home_author"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liked this"
+        android:textColor="#FFFFFF"
+        android:textSize="14dp"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="backB"
+        android:src="@drawable/backarrow"
+        android:background="@android:color/transparent"
+        android:layout_margin="16dp"
+        android:layout_alignParentTop="true"/>
+
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <ImageButton
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:onClick="usrB"
+            android:src="@drawable/usr_btn"
+            android:background="#1a1b25"
+            android:padding="8dp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:onClick="statistB"
+            android:src="@drawable/statist_btn"
+            android:background="#1a1b25"
+            android:padding="8dp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:onClick="bellB"
+            android:src="@drawable/bell_btn"
+            android:background="#1a1b25"
+            android:padding="8dp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:onClick="collB"
+            android:src="@drawable/coll_btn"
+            android:background="#1a1b25"
+            android:padding="8dp"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:onClick="homeB"
+            android:src="@drawable/home_btn"
+            android:background="#1a1b25"
+            android:padding="8dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
 </RelativeLayout>

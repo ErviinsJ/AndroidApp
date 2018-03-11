@@ -44,8 +44,7 @@
         android:layout_height="wrap_content"
         android:text="who are you and \nwhy you're \nstanding here?"
         android:textColor="#FFFFFF"
-        android:textSize="40dp"
-        android:fontFamily=""/>
+        android:textSize="40dp"/>
 
     <TextView
         android:id="@+id/home_secend_text"
@@ -59,11 +58,10 @@
         android:text="It doesn't matter if you're building the next
 Facebook, or if you're the director of \nmarketing for an industrial company."
         android:textColor="#FFFFFF"
-        android:textSize="16dp"
-        android:fontFamily=""/>
+        android:textSize="16dp"/>
 
     <ImageView
-        android:layout_marginTop="330dp"
+        android:layout_below="@+id/home_secend_text"
         android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,7 +70,7 @@ Facebook, or if you're the director of \nmarketing for an industrial company."
     <TextView
         android:layout_below="@id/home_main_text"
         android:layout_alignParentLeft="true"
-        android:paddingLeft="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="96dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

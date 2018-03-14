@@ -1,5 +1,6 @@
 package info.androidhive.appscandiweb;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,17 +21,17 @@ public class MainActivity extends AppCompatActivity {
     }
     public void bellB(View view) {
 
-        Intent intent = new Intent(this, ProfileActivity.class);
+        Intent intent = new Intent(this, NotificationActivity.class);
         startActivity(intent);
     }
     public void collB(View view) {
 
-        Intent intent = new Intent(this, ProfileActivity.class);
+        Intent intent = new Intent(this, NotificationActivity.class);
         startActivity(intent);
     }
     public void homeB(View view) {
 
-        Intent intent = new Intent(this, ProfileActivity.class);
+        Intent intent = new Intent(this, NotificationActivity.class);
         startActivity(intent);
     }
     public void backB(View view) {

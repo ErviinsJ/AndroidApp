@@ -155,13 +155,14 @@ Facebook, or if you're the director of \nmarketing for an industrial company."
         android:layout_alignParentTop="true"/>
 
 
-
     <LinearLayout
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom">
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <ImageButton
             android:layout_width="0px"

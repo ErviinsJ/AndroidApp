@@ -1,18 +1,9 @@
 package info.androidhive.appscandiweb;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.widget.Button;
-import android.widget.EditText;
-
-import static android.R.attr.button;
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +12,29 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, StatisticActivity.class);
         startActivity(intent);
+    }
+    public void usrB(View view) {
+
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+    public void bellB(View view) {
+
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+    public void collB(View view) {
+
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+    public void homeB(View view) {
+
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+    public void backB(View view) {
+        return;
     }
 
     @Override

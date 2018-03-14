@@ -44,46 +44,58 @@
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:background="@color/second_dark">
-            <TextView
+            <Button
                 android:layout_margin="11dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
                 android:text="January"
+                android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
-            <TextView
+            <Button
                 android:layout_margin="11dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
                 android:text="February"
+                android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
-            <TextView
+            <Button
                 android:layout_margin="11dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
                 android:text="March"
+                android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
-            <TextView
+            <Button
                 android:layout_margin="11dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
                 android:text="April"
+                android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
-            <TextView
+            <Button
                 android:layout_margin="11dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
                 android:text="May"
+                android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
-            <TextView
+            <Button
                 android:layout_margin="11dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
                 android:text="June"
+                android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
         </LinearLayout>

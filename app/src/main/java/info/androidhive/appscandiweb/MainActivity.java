@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import static android.os.Build.VERSION_CODES.N;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void collB(View view) {
 
-        Intent intent = new Intent(this, NotificationActivity.class);
+        Intent intent = new Intent(this, DataActivity.class);
         startActivity(intent);
     }
     public void homeB(View view) {

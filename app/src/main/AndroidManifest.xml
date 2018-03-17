@@ -25,7 +25,9 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".NotificationActivity"></activity>
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".ProfileSettingsActivity" />
+        <activity android:name=".DataActivity"></activity>
     </application>
 
 </manifest>

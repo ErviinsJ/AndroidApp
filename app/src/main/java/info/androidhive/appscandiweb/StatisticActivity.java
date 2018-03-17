@@ -23,8 +23,13 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import static android.R.attr.y;
+import static android.R.attr.yesNoPreferenceStyle;
+import static info.androidhive.appscandiweb.ProfileSettingsActivity.READ_BLOCK_SIZE;
 import static info.androidhive.appscandiweb.R.id.PieChart;
 
 public class StatisticActivity extends AppCompatActivity {
@@ -42,6 +47,8 @@ public class StatisticActivity extends AppCompatActivity {
 
 
     private float[] yData = {240.0f, 270.0f, 220.0f, 70.0f};
+    private float[] zData = {250.0f, 230.0f, 210.0f, 70.0f};
+    String strSpendings = "";
 
     private String[] xData = {"food and restaurants", "clothing", "entertainment", "saved"};
 
@@ -55,7 +62,27 @@ public class StatisticActivity extends AppCompatActivity {
         pieChart = (PieChart) findViewById(PieChart);
 
 
-        //pieChart.setDescription("");
+
+        try {
+            FileInputStream fileIn=openFileInput("January.txt");
+            InputStreamReader InputRead= new InputStreamReader(fileIn);
+
+            char[] inputBuffer= new char[READ_BLOCK_SIZE];
+            String s="";
+            int charRead;
+
+            while ((charRead=InputRead.read(inputBuffer))>0) {
+                // char to string conversion
+                String readstring=String.copyValueOf(inputBuffer,0,charRead);
+                s +=readstring;
+            }
+            strSpendings = s;
+            InputRead.close();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         pieChart.setRotationEnabled(true);
 
@@ -113,12 +140,48 @@ public class StatisticActivity extends AppCompatActivity {
     private void addDataSet() {
 
 
+
+        int found = 0;
+        int j = 0;
+        int lastSemicol = 0;
+            for (char ch: strSpendings.toCharArray()) {
+                if (ch == ';')  {
+                    found++;
+                    switch(found) {
+                        case 1:
+
+                            yData[0] = Float.parseFloat(strSpendings.substring(0, j));
+                            lastSemicol = j;
+                            break;
+                        case 2:
+
+                            yData[1] = Float.parseFloat(strSpendings.substring(lastSemicol+1, j));
+                            lastSemicol = j;
+                            break;
+                        case 3:
+
+                            yData[2] = Float.parseFloat(strSpendings.substring(lastSemicol+1, j));
+                            lastSemicol = j;
+
+                            break;
+                        case 4:
+                            yData[3]= Float.parseFloat(strSpendings.substring(lastSemicol+1, j)) - yData[0] - yData[1] - yData[2];
+                            break;
+                    }
+
+                }
+                j++;
+            }
+
+
         ArrayList<PieEntry> yEntrys = new ArrayList<>();
         ArrayList<String> xEntrys = new ArrayList<>();
+
 
         for (int i = 0; i < yData.length; i++) {
             yEntrys.add(new PieEntry(yData[i], i));
         }
+
 
         for (int i = 1; i < xData.length; i++) {
             xEntrys.add(xData[i]);

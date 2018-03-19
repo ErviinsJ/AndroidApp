@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_focused="true" android:state_pressed="false" android:drawable="@drawable/statist_btn" />
-    <item android:state_focused="true" android:state_pressed="true" android:drawable="@drawable/gradient" />
-    <item android:state_focused="false" android:state_pressed="true" android:drawable="@drawable/gradient" />
+    <item android:state_focused="true"
+        android:state_pressed="false"
+        android:drawable="@drawable/statist_btn"
+        android:background="#1a1b25" />
+    <item android:state_focused="true"
+        android:state_pressed="true"
+        android:drawable="@drawable/statist_btn_presed"
+        android:background="#1a1b25"/>
+    <item android:state_focused="false"
+        android:state_pressed="true"
+        android:drawable="@drawable/statist_btn_presed"
+        android:background="#1a1b25"/>
     <item android:drawable="@drawable/statist_btn" />
 </selector>

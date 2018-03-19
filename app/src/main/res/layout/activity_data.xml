@@ -8,16 +8,34 @@
     android:background="@color/main_dark"
     android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/back_btn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="backB"
-        android:src="@drawable/backarrow"
-        android:background="@android:color/transparent"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_alignParentTop="true"/>
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="backB"
+            android:src="@drawable/backarrow"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/current_month"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="January"
+            android:textColor="#FFFFFF"
+            android:textSize="40dp"/>
+
+    </LinearLayout>
+
 
     <ImageView
         android:id="@+id/line"
@@ -35,52 +53,63 @@
             android:layout_height="match_parent"
             android:background="@color/second_dark">
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_jan_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
                 android:text="January"
+                android:onClick="janB"
                 android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_feb_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
                 android:text="February"
+                android:onClick="febB"
                 android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_mar_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
                 android:text="March"
+                android:onClick="marchB"
                 android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_apr_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
                 android:text="April"
+                android:onClick="aprilB"
                 android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_may_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
                 android:text="May"
+                android:onClick="mayB"
                 android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_june_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
@@ -89,7 +118,8 @@
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_july_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
@@ -98,7 +128,8 @@
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_aug_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
@@ -107,7 +138,8 @@
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_sep_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
@@ -116,7 +148,8 @@
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_oct_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
@@ -125,7 +158,8 @@
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_nov_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
@@ -134,7 +168,8 @@
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_dec_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
@@ -167,6 +202,7 @@
         android:layout_height="wrap_content"
         android:minLines="2"
         android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:inputType="numberDecimal">
@@ -196,6 +232,7 @@
             android:layout_height="wrap_content"
             android:minLines="2"
             android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:inputType="numberDecimal">
@@ -225,6 +262,7 @@
             android:layout_height="wrap_content"
             android:minLines="2"
             android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:inputType="numberDecimal">
@@ -254,6 +292,7 @@
             android:layout_height="wrap_content"
             android:minLines="2"
             android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:inputType="numberDecimal">

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,12 +48,112 @@ public class StatisticActivity extends AppCompatActivity {
 
 
     private float[] yData = {240.0f, 270.0f, 220.0f, 70.0f};
-    private float[] zData = {250.0f, 230.0f, 210.0f, 70.0f};
-    String strSpendings = "";
-
     private String[] xData = {"food and restaurants", "clothing", "entertainment", "saved"};
 
+    String strSpendings = "";
+    String monthTxt = "January.txt";
+    float earnings = 0.0f;
+    float spendings = 0.0f;
+
     PieChart pieChart;
+
+    public void janB(View view) {
+        monthTxt = "January.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_jan_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+    public void febB(View view) {
+        monthTxt = "February.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_feb_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+    public void marchB(View view) {
+        monthTxt = "March.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_mar_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+    public void aprilB(View view) {
+        monthTxt = "April.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_apr_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+    public void mayB(View view) {
+        monthTxt = "May.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_may_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+    public void juneB(View view) {
+        monthTxt = "June.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_june_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+    public void julyB(View view) {
+        monthTxt = "July.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_july_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+    public void augB(View view) {
+        monthTxt = "August.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_aug_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+    public void septB(View view) {
+        monthTxt = "September.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_sep_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+    public void octB(View view) {
+        monthTxt = "October.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_oct_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+    public void novB(View view) {
+        monthTxt = "November.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_nov_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+    public void decB(View view) {
+        monthTxt = "December.txt";
+        getData();
+        addDataSet();
+        reset_btn_background_color();
+        final Button color_btn = (Button) findViewById(R.id.rd_dec_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,28 +162,9 @@ public class StatisticActivity extends AppCompatActivity {
 
         pieChart = (PieChart) findViewById(PieChart);
 
+        getData();
 
 
-        try {
-            FileInputStream fileIn=openFileInput("January.txt");
-            InputStreamReader InputRead= new InputStreamReader(fileIn);
-
-            char[] inputBuffer= new char[READ_BLOCK_SIZE];
-            String s="";
-            int charRead;
-
-            while ((charRead=InputRead.read(inputBuffer))>0) {
-                // char to string conversion
-                String readstring=String.copyValueOf(inputBuffer,0,charRead);
-                s +=readstring;
-            }
-            strSpendings = s;
-            InputRead.close();
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         pieChart.setRotationEnabled(true);
 
@@ -94,10 +176,7 @@ public class StatisticActivity extends AppCompatActivity {
         pieChart.getDescription().setEnabled(false);
         pieChart.setTransparentCircleAlpha(0);
         pieChart.getLegend().setEnabled(false);
-
         pieChart.setDrawEntryLabels(false);
-        //pieChart.setEntryLabelTextSize(20);
-        //More options just check out the documentation!
 
 
         addDataSet();
@@ -135,10 +214,60 @@ public class StatisticActivity extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
+    private void getData(){
 
+        try {
+            FileInputStream fileIn=openFileInput(monthTxt);
+            InputStreamReader InputRead= new InputStreamReader(fileIn);
+
+            char[] inputBuffer= new char[READ_BLOCK_SIZE];
+            String s="";
+            int charRead;
+
+            while ((charRead=InputRead.read(inputBuffer))>0) {
+                // char to string conversion
+                String readstring=String.copyValueOf(inputBuffer,0,charRead);
+                s +=readstring;
+            }
+            strSpendings = s;
+            InputRead.close();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void reset_btn_background_color(){
+        final Button jan_btn = (Button) findViewById(R.id.rd_jan_btn);
+        jan_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+        final Button feb_btn = (Button) findViewById(R.id.rd_feb_btn);
+        feb_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+        final Button march_btn = (Button) findViewById(R.id.rd_mar_btn);
+        march_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+        final Button april_btn = (Button) findViewById(R.id.rd_apr_btn);
+        april_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+        final Button may_btn = (Button) findViewById(R.id.rd_may_btn);
+        may_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+        final Button june_btn = (Button) findViewById(R.id.rd_june_btn);
+        june_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+        final Button july_btn = (Button) findViewById(R.id.rd_july_btn);
+        july_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+        final Button aug_btn = (Button) findViewById(R.id.rd_aug_btn);
+        aug_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+        final Button sep_btn = (Button) findViewById(R.id.rd_sep_btn);
+        sep_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+        final Button oct_btn = (Button) findViewById(R.id.rd_oct_btn);
+        oct_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+        final Button nov_btn = (Button) findViewById(R.id.rd_nov_btn);
+        nov_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+        final Button dec_btn = (Button) findViewById(R.id.rd_dec_btn);
+        dec_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
+
+    }
 
     private void addDataSet() {
-
 
 
         int found = 0;
@@ -165,13 +294,37 @@ public class StatisticActivity extends AppCompatActivity {
 
                             break;
                         case 4:
-                            yData[3]= Float.parseFloat(strSpendings.substring(lastSemicol+1, j)) - yData[0] - yData[1] - yData[2];
+                            yData[3]= Float.parseFloat(strSpendings.substring(lastSemicol+1, j))
+                                    - yData[0] - yData[1] - yData[2];
+                            earnings = Float.parseFloat(strSpendings.substring(lastSemicol+1, j));
+                            if(yData[3] <0 ){yData[3] = 0;}
                             break;
                     }
 
                 }
                 j++;
             }
+
+
+        float snumb = (yData[3] % 1) * 100;
+        TextView bTextView = (TextView)findViewById(R.id.stat_dolars);
+        bTextView.setText(String.valueOf((int)yData[3]));
+        TextView mTextView = (TextView)findViewById(R.id.stat_cents);
+        mTextView.setText(String.valueOf((int)snumb));
+
+
+        float posCents = (earnings % 1) * 100;
+        TextView posDolTextView = (TextView)findViewById(R.id.positive_dolars);
+        posDolTextView.setText(String.valueOf((int)earnings));
+        TextView posCentTextView = (TextView)findViewById(R.id.positive_cents);
+        posCentTextView.setText(String.valueOf((int)posCents));
+
+        spendings = yData[0] + yData[1] + yData[2];
+        float negCents = (spendings % 1) * 100;
+        TextView negDolTextView = (TextView)findViewById(R.id.negative_dolars);
+        negDolTextView.setText(String.valueOf((int)spendings));
+        TextView negCentTextView = (TextView)findViewById(R.id.negative_cents);
+        negCentTextView.setText(String.valueOf((int)negCents));
 
 
         ArrayList<PieEntry> yEntrys = new ArrayList<>();
@@ -191,7 +344,7 @@ public class StatisticActivity extends AppCompatActivity {
         //create the data set
         PieDataSet pieDataSet = new PieDataSet(yEntrys, "amount spent");
         pieDataSet.setSliceSpace(2);
-        pieDataSet.setValueTextSize(12);
+        pieDataSet.setValueTextSize(0);
 
         pieChart.animateY(1000);
 
@@ -202,9 +355,7 @@ public class StatisticActivity extends AppCompatActivity {
         colors.add(Color.parseColor("#16A085"));
         colors.add(Color.parseColor("#FACE15"));
         colors.add(Color.parseColor("#8D4DE8"));
-        colors.add(Color.GRAY);
-        colors.add(Color.MAGENTA);
-        colors.add(Color.BLUE);
+        colors.add(Color.parseColor("#0E0F1A"));
 
         pieDataSet.setColors(colors);
 

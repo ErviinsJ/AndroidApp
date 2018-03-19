@@ -56,8 +56,8 @@ public class ProfileActivity extends AppCompatActivity {
                 String readstring=String.copyValueOf(inputBuffer,0,charRead);
                 s +=readstring;
             }
-            TextView myAwesomeTextView = (TextView)findViewById(R.id.name);
-            myAwesomeTextView.setText(s);
+            TextView mTextView = (TextView)findViewById(R.id.name);
+            mTextView.setText(s);
             InputRead.close();
 
 

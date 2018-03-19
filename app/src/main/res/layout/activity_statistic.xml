@@ -45,56 +45,127 @@
             android:layout_height="match_parent"
             android:background="@color/second_dark">
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_jan_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
                 android:text="January"
+                android:onClick="janB"
                 android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_feb_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
                 android:text="February"
+                android:onClick="febB"
                 android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_mar_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
                 android:text="March"
+                android:onClick="marchB"
                 android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_apr_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
                 android:text="April"
+                android:onClick="aprilB"
                 android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_may_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
                 android:text="May"
+                android:onClick="mayB"
                 android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
             <Button
-                android:layout_margin="11dp"
+                android:id="@+id/rd_june_btn"
+                android:padding="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/second_dark"
                 android:text="June"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_july_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="July"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_aug_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="August"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_sep_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="September"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_oct_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="October"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_nov_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="November"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_dec_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="December"
                 android:textAllCaps="false"
                 android:textSize="20dp"
                 android:textColor="#FFFFFF"/>
@@ -187,97 +258,123 @@
         android:text="Tuch pie sections to see details"
         android:textSize="15dp"
         android:textColor="#FFFFFF"/>
-    <ImageView
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/blue_rect"
-        android:layout_margin="8dp"
+        android:layout_marginBottom="8dp">
+
+        <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/blue_rectangl"/>
-    <ImageView
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="8dp"
-        android:id="@+id/red_rect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/red_rectangl"/>
-    <TextView
-        android:id="@+id/positive_dollars_sign"
-        android:layout_alignParentBottom="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
-        android:layout_marginLeft="26dp"
-        android:text="+$"
-        android:textSize="30dp"
-        android:textColor="#FFFFFF"/>
-    <TextView
-        android:id="@+id/negative_dollars_sign"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
-        android:paddingLeft="80dp"
-        android:text="-$"
-        android:textSize="30dp"
-        android:textColor="#FFFFFF"/>
-    <TextView
-        android:id="@+id/positive_dolars"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="26dp"
-        android:layout_toRightOf="@+id/positive_dollars_sign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1400"
-        android:textSize="30dp"
-        android:textColor="#FFFFFF"/>
-    <TextView
-        android:id="@+id/negative_dolars"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="26dp"
-        android:layout_toRightOf="@+id/negative_dollars_sign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="980"
-        android:textSize="30dp"
-        android:textColor="#FFFFFF"/>
-    <TextView
-        android:id="@+id/positive_cents"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="44dp"
-        android:layout_toRightOf="@+id/positive_dolars"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="99"
-        android:textSize="16dp"
-        android:textColor="#FFFFFF"/>
-    <TextView
-        android:id="@+id/negative_cents"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="44dp"
-        android:layout_toRightOf="@+id/negative_dolars"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="25"
-        android:textSize="16dp"
-        android:textColor="#FFFFFF"/>
-    <ImageView
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/positive_dolars"
-        android:layout_marginBottom="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/blue_arrow"/>
-    <ImageView
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/negative_dolars"
-        android:layout_marginBottom="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/red_arrow"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/blue_rect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/blue_rectangl"/>
+
+            <TextView
+                android:id="@+id/positive_dollars_sign"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/positive_dolars"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+$"
+                android:textSize="30dp"
+                android:textColor="#FFFFFF"/>
+            <TextView
+                android:id="@+id/positive_dolars"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1400"
+                android:textSize="30dp"
+                android:textColor="#FFFFFF"/>
+            <TextView
+                android:id="@+id/positive_cents"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/positive_dolars"
+                android:paddingBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="99"
+                android:textSize="16dp"
+                android:textColor="#FFFFFF"/>
+            <ImageView
+                android:layout_centerVertical="true"
+                android:paddingTop="12dp"
+                android:layout_toRightOf="@+id/positive_dolars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/blue_arrow"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/red_rect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/red_rectangl"/>
+
+            <TextView
+                android:id="@+id/negative_dollars_sign"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/negative_dolars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-$"
+                android:textSize="30dp"
+                android:textColor="#FFFFFF"/>
+            <TextView
+                android:id="@+id/negative_dolars"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="980"
+                android:textSize="30dp"
+                android:textColor="#FFFFFF"/>
+            <TextView
+                android:id="@+id/negative_cents"
+                android:layout_centerVertical="true"
+                android:paddingBottom="12dp"
+                android:layout_toRightOf="@+id/negative_dolars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25"
+                android:textSize="16dp"
+                android:textColor="#FFFFFF"/>
+            <ImageView
+                android:layout_centerVertical="true"
+                android:paddingTop="12dp"
+                android:layout_toRightOf="@+id/negative_dolars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/red_arrow"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

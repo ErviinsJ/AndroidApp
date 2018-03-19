@@ -177,7 +177,7 @@ Facebook, or if you're the director of \nmarketing for an industrial company."
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:onClick="statistB"
-            android:src="@drawable/statist_btn"
+            android:src="@drawable/button_press"
             android:background="#1a1b25"
             android:padding="8dp"
             android:layout_weight="1"/>

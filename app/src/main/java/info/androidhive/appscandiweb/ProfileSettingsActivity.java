@@ -5,15 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-
-import static android.os.Build.VERSION_CODES.M;
 
 public class ProfileSettingsActivity extends AppCompatActivity {
 
@@ -22,8 +17,8 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    EditText textmsg1;
-    EditText textmsg2;
+    EditText textName;
+    EditText textLastName;
 
     static final int READ_BLOCK_SIZE = 100;
 
@@ -32,15 +27,15 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_settings);
 
-        textmsg1=(EditText)findViewById(R.id.edit_first_name);
-        textmsg2=(EditText)findViewById(R.id.edit_last_name);
+        textName =(EditText)findViewById(R.id.edit_first_name);
+        textLastName =(EditText)findViewById(R.id.edit_last_name);
     }
 //    write text to file
     public void NameBtn(View v) {
         try {
             FileOutputStream fileout=openFileOutput("name.txt", MODE_PRIVATE);
             OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
-            outputWriter.write(textmsg1.getText().toString());
+            outputWriter.write(textName.getText().toString());
             outputWriter.close();
 
             Toast.makeText(getBaseContext(), "First name updated successfully!",
@@ -49,6 +44,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        textName.setText("");
     }
 
 //    Read text from file
@@ -56,7 +52,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         try {
             FileOutputStream fileout=openFileOutput("surname.txt", MODE_PRIVATE);
             OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
-            outputWriter.write(textmsg2.getText().toString());
+            outputWriter.write(textLastName.getText().toString());
             outputWriter.close();
 
             Toast.makeText(getBaseContext(), "Last name updated successfully!",
@@ -65,6 +61,7 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        textLastName.setText("");
     }
     @Override
     protected void onPause() {

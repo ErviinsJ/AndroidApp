@@ -187,6 +187,18 @@ public class DataActivity extends AppCompatActivity {
         textmsgCloth.setText("");
         textmsgEnt.setText("");
     }
+
+    public void deleteBtn(View view) {
+        try {
+            deleteFile(monthTxt);
+            Toast.makeText(getBaseContext(), monthName + " data deleted successfully!",
+                    Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 //    Resets background color to all buttons
     private void reset_btn_background_color(){
         final Button jan_btn = (Button) findViewById(R.id.rd_jan_btn);

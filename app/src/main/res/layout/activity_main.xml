@@ -35,90 +35,97 @@
         android:src="@drawable/overlay"
         android:layout_alignParentTop="true"/>
 
-    <TextView
-        android:id="@+id/home_main_text"
-        android:layout_centerInParent="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="16dp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_above="@+id/likes_background"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="who are you and \nwhy you're \nstanding here?"
-        android:textColor="#FFFFFF"
-        android:textSize="40dp"/>
+        android:layout_marginBottom="8dp">
 
-    <TextView
-        android:id="@+id/home_secend_text"
-        android:layout_below="@id/home_main_text"
-        android:layout_centerInParent="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="It doesn't matter if you're building the next
-Facebook, or if you're the director of \nmarketing for an industrial company."
-        android:textColor="#FFFFFF"
-        android:textSize="16dp"/>
+        <TextView
+            android:id="@+id/home_main_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="who are you and \nwhy you're \nstanding here?"
+            android:textColor="#FFFFFF"
+            android:textSize="40dp" />
+        <TextView
+            android:id="@+id/home_secend_text"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="It doesn't matter if you're building the next\nFacebook, or if you're the director of \nmarketing for an industrial company."
+            android:textColor="#FFFFFF"
+            android:textSize="16dp"/>
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp"/>
+            <TextView
+                android:id="@+id/home_author"
+                android:layout_marginLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nicholas O'Brian"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            <TextView
+                android:layout_gravity="bottom"
+                android:id="@+id/home_date"
+                android:layout_marginRight="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28 July"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <ImageView
-        android:layout_below="@+id/home_secend_text"
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/line"/>
-
-    <TextView
-        android:layout_below="@id/home_main_text"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="96dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="By"
-        android:textColor="#FFFFFF"
-        android:textSize="16dp"/>
-    <TextView
-        android:id="@+id/home_author"
-        android:layout_below="@id/home_main_text"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="96dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nicholas O'Brian"
-        android:textColor="#FFFFFF"
-        android:textSize="16dp"
-        android:textStyle="bold"/>
-    <TextView
-        android:id="@+id/home_date"
-        android:layout_below="@id/home_main_text"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="96dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="28 July"
-        android:textColor="#FFFFFF"
-        android:textSize="16dp"
-        android:textStyle="bold"/>
-
-    <ImageView
-        android:layout_below="@+id/home_author"
         android:id="@+id/userpic1"
+        android:layout_above="@+id/navig_btn_bar"
         android:layout_alignParentLeft="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/userpica"/>
     <ImageView
-        android:layout_below="@+id/home_author"
         android:id="@+id/userpic2"
+        android:layout_above="@+id/navig_btn_bar"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="38dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/userpicb"/>
     <ImageView
-        android:layout_below="@+id/home_author"
         android:id="@+id/likes_background"
+        android:layout_above="@+id/navig_btn_bar"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="80dp"
         android:layout_width="wrap_content"
@@ -126,25 +133,29 @@ Facebook, or if you're the director of \nmarketing for an industrial company."
         android:src="@drawable/likes_bckgrnd"/>
     <TextView
         android:id="@+id/likes_count"
-        android:layout_below="@id/home_author"
+        android:layout_above="@+id/navig_btn_bar"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="95dp"
-        android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
         android:text="+75"
         android:textColor="#FFFFFF"
         android:textSize="16dp"/>
     <TextView
-        android:layout_below="@id/home_author"
+        android:layout_above="@+id/navig_btn_bar"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="150dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Liked this"
         android:textColor="#FFFFFF"
         android:textSize="14dp"/>
+
+
+
+
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -156,6 +167,7 @@ Facebook, or if you're the director of \nmarketing for an industrial company."
 
 
     <LinearLayout
+        android:id="@+id/navig_btn_bar"
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -165,6 +177,7 @@ Facebook, or if you're the director of \nmarketing for an industrial company."
         android:layout_alignParentStart="true">
 
         <ImageButton
+            android:id="@+id/usr_btn"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:onClick="usrB"
@@ -177,11 +190,12 @@ Facebook, or if you're the director of \nmarketing for an industrial company."
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:onClick="statistB"
-            android:src="@drawable/button_press"
+            android:src="@drawable/statist_btn"
             android:background="#1a1b25"
             android:padding="8dp"
             android:layout_weight="1"/>
         <ImageButton
+            android:id="@+id/bell_btn"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:onClick="bellB"
@@ -190,6 +204,7 @@ Facebook, or if you're the director of \nmarketing for an industrial company."
             android:padding="8dp"
             android:layout_weight="1"/>
         <ImageButton
+            android:id="@+id/coll_btn"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:onClick="collB"
@@ -198,6 +213,7 @@ Facebook, or if you're the director of \nmarketing for an industrial company."
             android:padding="8dp"
             android:layout_weight="1"/>
         <ImageButton
+            android:id="@+id/home_btn"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:onClick="homeB"
@@ -207,4 +223,6 @@ Facebook, or if you're the director of \nmarketing for an industrial company."
             android:layout_weight="1"/>
 
     </LinearLayout>
+
+
 </RelativeLayout>

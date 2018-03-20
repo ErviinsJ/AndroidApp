@@ -29,8 +29,8 @@ public class DataActivity extends AppCompatActivity {
     String monthName = "January";
     String monthTxt = "January.txt";
 
-    static final int READ_BLOCK_SIZE = 100;
 
+//    Month selection buttons
     public void janB(View view) {
 
         monthTxt = "January.txt";
@@ -160,10 +160,12 @@ public class DataActivity extends AppCompatActivity {
         textmsgFood=(EditText)findViewById(R.id.edit_food);
         textmsgCloth=(EditText)findViewById(R.id.edit_clothing);
         textmsgEnt=(EditText)findViewById(R.id.edit_entertainment);
+
+        final Button color_btn = (Button) findViewById(R.id.rd_jan_btn);
+        color_btn.setBackgroundColor(Color.parseColor("#6956EC"));
     }
-    // write text to file
+//    write text to file
     public void changeBtn(View v) {
-        // add-write text into file
         str =  textmsgFood.getText().toString() + ";" + textmsgCloth.getText().toString() + ";"
                 +textmsgEnt.getText().toString() + ";" + textmsgInc.getText().toString() + ";" ;
 
@@ -174,14 +176,18 @@ public class DataActivity extends AppCompatActivity {
             outputWriter.write(str);
             outputWriter.close();
 
-            //display file saved message
             Toast.makeText(getBaseContext(),  monthName + " data updated successfully!",
                     Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        textmsgInc.setText("");
+        textmsgFood.setText("");
+        textmsgCloth.setText("");
+        textmsgEnt.setText("");
     }
+//    Resets background color to all buttons
     private void reset_btn_background_color(){
         final Button jan_btn = (Button) findViewById(R.id.rd_jan_btn);
         jan_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));

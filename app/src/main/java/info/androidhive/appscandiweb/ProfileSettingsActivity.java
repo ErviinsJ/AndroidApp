@@ -35,16 +35,14 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         textmsg1=(EditText)findViewById(R.id.edit_first_name);
         textmsg2=(EditText)findViewById(R.id.edit_last_name);
     }
-    // write text to file
+//    write text to file
     public void NameBtn(View v) {
-        // add-write text into file
         try {
             FileOutputStream fileout=openFileOutput("name.txt", MODE_PRIVATE);
             OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
             outputWriter.write(textmsg1.getText().toString());
             outputWriter.close();
 
-            //display file saved message
             Toast.makeText(getBaseContext(), "First name updated successfully!",
                     Toast.LENGTH_SHORT).show();
 
@@ -53,21 +51,24 @@ public class ProfileSettingsActivity extends AppCompatActivity {
         }
     }
 
-    // Read text from file
+//    Read text from file
     public void SurnameBtn(View v) {
-        //reading text from file
         try {
             FileOutputStream fileout=openFileOutput("surname.txt", MODE_PRIVATE);
             OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
             outputWriter.write(textmsg2.getText().toString());
             outputWriter.close();
 
-            //display file saved message
             Toast.makeText(getBaseContext(), "Last name updated successfully!",
                     Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }

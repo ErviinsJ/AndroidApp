@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="info.androidhive.appscandiweb.ProfileActivity"
+    android:background="@color/main_dark"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="backB"
+            android:src="@drawable/backarrow"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/current_month"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="January"
+            android:textColor="#FFFFFF"
+            android:textSize="40dp"/>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line"/>
+
+    <HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="@color/second_dark">
+            <Button
+                android:id="@+id/rd_jan_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="January"
+                android:onClick="janB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_feb_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="February"
+                android:onClick="febB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_mar_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="March"
+                android:onClick="marchB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_apr_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="April"
+                android:onClick="aprilB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_may_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="May"
+                android:onClick="mayB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_june_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="June"
+                android:onClick="juneB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_july_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="July"
+                android:onClick="julyB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_aug_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="August"
+                android:onClick="augB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_sep_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="September"
+                android:onClick="septB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_oct_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="October"
+                android:onClick="octB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_nov_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="November"
+                android:onClick="novB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:id="@+id/rd_dec_btn"
+                android:padding="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/second_dark"
+                android:text="December"
+                android:onClick="decB"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="16dp">
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Income:"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"/>
+
+    <EditText
+        android:id="@+id/edit_income"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minLines="2"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:inputType="numberDecimal">
+
+        <requestFocus />
+    </EditText>
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="16dp">
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food:"
+            android:textColor="#FFFFFF"
+            android:textSize="40dp"/>
+
+        <EditText
+            android:id="@+id/edit_food"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:inputType="numberDecimal">
+
+            <requestFocus />
+        </EditText>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="16dp">
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clothing:"
+            android:textColor="#FFFFFF"
+            android:textSize="40dp"/>
+
+        <EditText
+            android:id="@+id/edit_clothing"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:inputType="numberDecimal">
+
+            <requestFocus />
+        </EditText>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="16dp">
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entertainment:"
+            android:textColor="#FFFFFF"
+            android:textSize="40dp"/>
+
+        <EditText
+            android:id="@+id/edit_entertainment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:inputType="numberDecimal">
+
+            <requestFocus />
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="16dp">
+
+
+        <Button
+            android:layout_margin="8dp"
+            android:id="@+id/delButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:onClick="deleteBtn"
+            android:layout_weight="1"
+            android:background="@color/red"/>
+
+        <Button
+            android:layout_margin="8dp"
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change"
+            android:onClick="changeBtn"
+            android:layout_weight="1"
+            android:background="@color/green"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="info.androidhive.appscandiweb.ProfileActivity"
+    android:background="@color/main_dark">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="backB"
+        android:src="@drawable/backarrow"
+        android:background="@android:color/transparent"
+        android:layout_margin="16dp"
+        android:layout_alignParentTop="true"/>
+    <ImageView
+        android:layout_above="@+id/under_construction_text"
+        android:layout_marginBottom="25dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/statist_symb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bell_btn"/>
+    <TextView
+        android:id="@+id/under_construction_text"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No new notifications"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"/>
+
+
+</RelativeLayout>

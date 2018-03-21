@@ -1,20 +1,15 @@
 package info.androidhive.appscandiweb;
 
-import android.app.Activity;
+
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-import java.util.concurrent.TimeUnit;
-
-import static android.R.attr.button;
 import static android.os.Build.VERSION_CODES.N;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,10 +46,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void homeB(View view) {
 
-        Intent intent = new Intent(this, NotificationActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         final ImageButton button = (ImageButton) findViewById(R.id.home_btn);
         button.setBackgroundColor(Color.parseColor("#6956EC"));
+        finish();
     }
     public void backB(View view) {
         return;

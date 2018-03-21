@@ -2,35 +2,26 @@ package info.androidhive.appscandiweb;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.Utils;
 
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import static android.R.attr.data;
-import static android.R.attr.y;
-import static android.R.attr.yesNoPreferenceStyle;
+import static android.R.id.input;
 import static info.androidhive.appscandiweb.ProfileSettingsActivity.READ_BLOCK_SIZE;
 import static info.androidhive.appscandiweb.R.id.PieChart;
 
@@ -217,8 +208,9 @@ public class StatisticActivity extends AppCompatActivity {
                     }
                 }
 
+
                 final TextView amountSpent = (TextView) findViewById(R.id.amount_spent_text);
-                amountSpent.setText(spent);
+                amountSpent.setText(roundString(spent));
                 final TextView whereSpent = (TextView) findViewById(R.id.description_text);
                 whereSpent.setText(xData[pos1]);
 
@@ -260,6 +252,7 @@ public class StatisticActivity extends AppCompatActivity {
         where_img.setImageResource(R.drawable.trnsparent);
     }
 
+//    Read data from text file
     private void getData(){
 
         try {
@@ -293,7 +286,14 @@ public class StatisticActivity extends AppCompatActivity {
         }
     }
 
-//    Resets background color to all buttons
+//    Rounds a string number to two decimal points
+    private String roundString(String input){
+        float flNumber = Float.parseFloat(input);
+        input = String.format("%.2f", flNumber);
+        return input;
+    }
+
+//    Resets background color to all month buttons
     private void reset_btn_background_color(){
         final Button jan_btn = (Button) findViewById(R.id.rd_jan_btn);
         jan_btn.setBackgroundColor(Color.parseColor("#0E0F1A"));
@@ -322,6 +322,7 @@ public class StatisticActivity extends AppCompatActivity {
 
     }
 
+//    Adds data from input string to data array
     private void addDataSet() {
 
         int found = 0;
@@ -332,24 +333,24 @@ public class StatisticActivity extends AppCompatActivity {
                     found++;
                     switch(found) {
                         case 1:
-                            yData[0] = Float.parseFloat(strSpendings.substring(0, j));
+                            yData[0] = Float.parseFloat(roundString(strSpendings.substring(0, j)));
                             lastSemicol = j;
                             break;
                         case 2:
 
-                            yData[1] = Float.parseFloat(strSpendings.substring(lastSemicol+1, j));
+                            yData[1] = Float.parseFloat(roundString(strSpendings.substring(lastSemicol+1, j)));
                             lastSemicol = j;
                             break;
                         case 3:
 
-                            yData[2] = Float.parseFloat(strSpendings.substring(lastSemicol+1, j));
+                            yData[2] = Float.parseFloat(roundString(strSpendings.substring(lastSemicol+1, j)));
                             lastSemicol = j;
 
                             break;
                         case 4:
-                            yData[3]= Float.parseFloat(strSpendings.substring(lastSemicol+1, j))
+                            yData[3]= Float.parseFloat(roundString(strSpendings.substring(lastSemicol+1, j)))
                                     - yData[0] - yData[1] - yData[2];
-                            earnings = Float.parseFloat(strSpendings.substring(lastSemicol+1, j));
+                            earnings = Float.parseFloat(roundString(strSpendings.substring(lastSemicol+1, j)));
                             balance = yData[3];
                             if(yData[3] <0 ){yData[3] = 0;}
                             break;
@@ -369,17 +370,17 @@ public class StatisticActivity extends AppCompatActivity {
 
 //        sets text to text inside pie chart center
         if (balance >= 0) {
-            float snumb = (yData[3] % 1) * 100;
+            float cents = (yData[3] % 1) * 100;
             TextView bTextView = (TextView) findViewById(R.id.stat_dolars);
             bTextView.setText("$" + String.valueOf((int) yData[3]));
             TextView mTextView = (TextView) findViewById(R.id.stat_cents);
-            mTextView.setText(String.valueOf((int) snumb));
+            mTextView.setText(String.valueOf((int) cents));
         }else if (balance < 0){
-            float snumb = ((balance*(-1)) % 1) * 100;
+            float cents = ((balance*(-1)) % 1) * 100;
             TextView bTextView = (TextView) findViewById(R.id.stat_dolars);
             bTextView.setText("-$" + String.valueOf((int) (balance*(-1))));
             TextView mTextView = (TextView) findViewById(R.id.stat_cents);
-            mTextView.setText(String.valueOf((int) snumb));
+            mTextView.setText(String.valueOf((int) cents));
 
         }
 
@@ -438,6 +439,7 @@ public class StatisticActivity extends AppCompatActivity {
         pieChart.setData(pieData);
         pieChart.invalidate();
     }
+
 
 
 }
